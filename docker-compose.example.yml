@@ -14,9 +14,14 @@ services:
       - ./public:/usr/src/app/public
       - ./resources:/usr/src/app/resources
       - ./start:/usr/src/app/start
+
       - ./server.js:/usr/src/app/server.js
       - ./.env:/usr/src/app/.env
       - ./ace:/usr/src/app/ace
+      - ./Makefile:/usr/src/app/Makefile
+      - ./package.json:/usr/src/app/package.json
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - ./webpack.config.js:/usr/src/app/webpack.config.js
     # Enable if you want project to always boot up
     # restart: always
 
