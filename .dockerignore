@@ -1,0 +1,10 @@
+README.md
+Makefile
+Dockerfile
+docker-compose.example.yml
+docker-compose.yml
+.gitignore
+.env.example
+.editorconfig
+node_modules
+.docker_local

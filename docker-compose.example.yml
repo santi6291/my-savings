@@ -1,20 +1,28 @@
-# version: '3'
-# services:
+version: '3'
+
+services:
   web:
-    image: node:10
+    build: ./
     ports:
-      - '8000:8000'
+      - 8000
     environment:
-      PUID: 574
-      PGID: 575
-    working_dir: /usr/src/app
+      VIRTUAL_HOST: my-savings.test
+    # only needed for local development
     command: npx adonis serve --dev
     volumes:
-      - ./:/usr/src/app
+      - ./app:/usr/src/app/app
+      - ./config:/usr/src/app/config
+      - ./database:/usr/src/app/database
+      - ./public:/usr/src/app/public
+      - ./resources:/usr/src/app/resources
+      - ./start:/usr/src/app/start
+      - ./server.js:/usr/src/app/server.js
+      - ./.env:/usr/src/app/.env
+      - ./ace:/usr/src/app/ace
     links:
       - mysql
-      # - redis
-    restart: always
+    # Enable if you want project to always boot up
+    # restart: always
 
   mysql:
     image: mysql:5.7
@@ -26,6 +34,13 @@
     environment:
       MYSQL_USER: "my_savings_usr"
       MYSQL_PASSWORD: ""
-      MYSQL_DATABASE: "my_savings"
+      MYSQL_DATABASE: "my_savings_adonis"
       MYSQL_ROOT_PASSWORD: ""
-    restart: always
+    # Enable if you want project to always boot up
+    # restart: always
+
+# Your project docker-compose.yml must be on the same network as your dash.
+networks:
+  default:
+    external:
+      name: dash
