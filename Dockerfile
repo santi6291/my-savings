@@ -6,6 +6,9 @@ COPY ./ /usr/src/app
 
 WORKDIR /usr/src/app
 
+# install adonis cli
+RUN npm install -g @adonisjs/cli@4
+
 RUN npm install
 
 CMD npx adonis serve
