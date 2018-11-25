@@ -11,6 +11,6 @@ RUN npm install -g @adonisjs/cli@4
 
 RUN npm install
 
-RUN webpack-prod
+RUN make webpack-prod
 
 CMD make serve-prod
