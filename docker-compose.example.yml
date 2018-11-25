@@ -1,0 +1,31 @@
+# version: '3'
+# services:
+  web:
+    image: node:10
+    ports:
+      - '8000:8000'
+    environment:
+      PUID: 574
+      PGID: 575
+    working_dir: /usr/src/app
+    command: npx adonis serve --dev
+    volumes:
+      - ./:/usr/src/app
+    links:
+      - mysql
+      # - redis
+    restart: always
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./.docker_local/.mysql/:/var/lib/mysql
+      # - ./.docker_local/my_savings.sql.gz:/docker-entrypoint-initdb.d/my_savings.sql.gz
+    ports:
+      - 3306
+    environment:
+      MYSQL_USER: "my_savings_usr"
+      MYSQL_PASSWORD: ""
+      MYSQL_DATABASE: "my_savings"
+      MYSQL_ROOT_PASSWORD: ""
+    restart: always

@@ -12,3 +12,4 @@ tmp
 database/development.sqlite
 
 /.docker_local
+/docker-compose.yml
