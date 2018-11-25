@@ -14,7 +14,8 @@ dev:
 		'make server-dev' \
 		'make watch-webpack'
 
-prod: webpack-prod server-prod
+serve-prod:
+	@adonis serve
 
 watch-webpack:
 	npx webpack --watch --mode development
@@ -24,6 +25,3 @@ webpack-prod:
 
 server-dev:
 	@adonis serve --dev
-
-server-prod:
-	@adonis serve

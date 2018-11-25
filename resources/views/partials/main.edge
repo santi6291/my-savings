@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Hello Adonis</title>
+
   {{ style('app') }}
-  {{ script('app') }}
+  {{--  using script tag to enable async defer attributes  --}}
+  <script src="{{ assetsUrl('app.js') }}" async defer ></script>
 </head>
 <body>
   <section>
         @section('content')
-            <div class="logo"></div>
-            <div class="title"></div>
-            <div class="subtitle"><p>AdonisJs simplicity will make you feel confident about your code</p></div>
+            <h1>Should not see this</h1>
         @endsection
   </section>
 </body>
