@@ -1,3 +1,6 @@
-body {
-    background-color: black;
-}
+@import 'foundation-sites/scss/foundation';
+
+$header-font-family: 'Roboto', sans-serif;
+$body-font-family: 'Roboto', sans-serif;
+
+@include foundation-everything;
