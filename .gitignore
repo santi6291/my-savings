@@ -13,3 +13,5 @@ database/development.sqlite
 
 /.docker_local
 /docker-compose.yml
+/public/*.css
+/public/*.js
