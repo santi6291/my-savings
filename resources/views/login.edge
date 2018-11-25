@@ -1,5 +1,17 @@
 @layout('partials/main')
 
 @section('content')
-    <p>login</p>
+    <div class="login grid-x align-center align-middle">
+        <div class="login__content cell medium-6 large-4">
+            <button type="button" class="login__button button expanded">
+                    <div class="login__button-grid grid-x align-middle">
+                        <div class="login__button-icon cell medium-2">
+                            @inlineSvg('svg/google')
+                        </div>
+                        <div class="login__button-text cell medium-10 text-left">Sign In With Google</div>
+                    </div>
+            </button>
+        </div>
+    </div>
+
 @endsection
