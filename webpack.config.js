@@ -43,4 +43,3 @@ module.exports = {
         extractSass
     ]
 }
-T
