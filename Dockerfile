@@ -11,4 +11,4 @@ RUN npm install -g @adonisjs/cli@4
 
 RUN npm install
 
-CMD npx adonis serve
+CMD make prod

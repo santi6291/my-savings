@@ -1,5 +1,4 @@
 README.md
-Makefile
 Dockerfile
 docker-compose.example.yml
 docker-compose.yml
