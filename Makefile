@@ -17,7 +17,7 @@ dev:
 prod: webpack-prod server-prod
 
 watch-webpack:
-	@npx webpack --mode development --watch
+	npx webpack --watch --mode development
 
 webpack-prod:
 	@npx webpack --mode production
