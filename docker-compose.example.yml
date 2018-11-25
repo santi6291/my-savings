@@ -3,8 +3,6 @@ version: '3'
 services:
   web:
     build: ./
-    ports:
-      - 8000
     environment:
       VIRTUAL_HOST: my-savings.test
     # only needed for local development
@@ -19,8 +17,6 @@ services:
       - ./server.js:/usr/src/app/server.js
       - ./.env:/usr/src/app/.env
       - ./ace:/usr/src/app/ace
-    links:
-      - mysql
     # Enable if you want project to always boot up
     # restart: always
 
@@ -29,8 +25,6 @@ services:
     volumes:
       - ./.docker_local/.mysql/:/var/lib/mysql
       # - ./.docker_local/my_savings.sql.gz:/docker-entrypoint-initdb.d/my_savings.sql.gz
-    ports:
-      - 3306
     environment:
       MYSQL_USER: "my_savings_usr"
       MYSQL_PASSWORD: ""
@@ -38,6 +32,11 @@ services:
       MYSQL_ROOT_PASSWORD: ""
     # Enable if you want project to always boot up
     # restart: always
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      VIRTUAL_HOST: my-savings-admin.test
 
 # Your project docker-compose.yml must be on the same network as your dash.
 networks:
