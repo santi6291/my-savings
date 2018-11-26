@@ -15,7 +15,7 @@ function sassRules() {
             }, {
                 loader: 'sass-loader',
                 options: {
-                    includePaths: [ "./node_modules/" ]
+                    includePaths: ["./node_modules/"]
                 }
             }]
         })
@@ -23,12 +23,12 @@ function sassRules() {
 }
 
 function scriptRules() {
-    return [{
+    return [/* {
         test: /\.js$/,
         exclude: [/node_modules/],
         loader: 'babel-loader',
-        options: { presets: ['env'] }
-    }]
+        options: { presets: ['env', "@babel/preset-env"] }
+    } */]
 }
 
 module.exports = {
@@ -45,5 +45,9 @@ module.exports = {
     },
     plugins: [
         extractSass
-    ]
+    ],
+    watchOptions: {
+        // aggregateTimeout: 300,
+        poll: true
+    }
 }
