@@ -18,3 +18,5 @@ const Route = use('Route')
 
 Route.on('/').render('welcome');
 Route.on('/login').render('login');
+// Route.get('/login', 'LoginController.firebase').as('login');
+// Route.get('posts', 'PostController.index')
