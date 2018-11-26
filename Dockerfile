@@ -2,15 +2,15 @@ FROM node:10
 
 EXPOSE 8000
 
-COPY ./ /usr/src/app
+# COPY ./ /usr/src/app
 
 WORKDIR /usr/src/app
 
 # install adonis cli
 RUN npm install -g @adonisjs/cli@4
 
-RUN npm install
+# RUN npm install
 
-RUN make webpack-prod
+# RUN make webpack-prod
 
 CMD make serve-prod
